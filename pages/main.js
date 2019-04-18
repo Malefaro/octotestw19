@@ -9,6 +9,7 @@ class MainPage extends DefaultPage {
 		const container = '#mailbox-container';
 		return {
 			container,
+			logout: '[id="PH_logoutLink"]',
 			login: container + ' input[name="login"]',
 			password: container + ' input[name="password"]',
 			button: '[type="submit"]'

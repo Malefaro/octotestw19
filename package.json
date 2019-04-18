@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "chromedriver": "2.43.1",
-    "selenium-standalone": "6.15.3"
+    "selenium-standalone": "6.15.3",
+    "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }

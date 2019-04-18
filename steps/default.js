@@ -8,7 +8,7 @@ export default class DefaultSteps {
 		browser.url(path);
 	}
 
-	redirectToQa() {
-		this.open('/bundles/page.qa.html');
-	}
+	// redirectToQa() {
+	// 	this.open('/bundles/page.qa.html');
+	// }
 }

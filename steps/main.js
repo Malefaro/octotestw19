@@ -9,8 +9,12 @@ class MainPageSteps extends DefaultSteps {
 	login(username, password) {
 		this.page.fillLoginForm(username, password);
 		this.page.submit();
-		this.page.waitForUrl('https://e.mail.ru/messages/inbox/?back=1&afterReload=1');
-		this.redirectToQa();
+		this.page.waitForUrl("https://e.mail.ru/messages/inbox/")
+	}
+
+	logout() {
+		this.page.page.waitForVisible(this.page.locators.logout);
+		this.page.page.click(this.page.locators.logout);
 	}
 }
 

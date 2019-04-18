@@ -17,11 +17,11 @@ export default class DefaultPage {
 		return browser;
 	}
 
-	redirectToQa() {
-		browser.url('/bundles/page.qa.html')
-	}
+	// redirectToQa() {
+	// 	browser.url('/bundles/page.qa.html')
+	// }
 
-	waitForUrl(value, timeout, revert) {
+	waitForUrl(value, timeout=10000, revert) {
 		let url, actual;
 		try {
 			return browser.waitUntil(() => {
@@ -34,7 +34,8 @@ export default class DefaultPage {
 					url = url.replace(/\/$/, '');
 				}
 	
-				actual = value === url;
+				// actual = value === url;
+				actual = url.includes(value);
 	
 				if (typeof value === 'function') {
 					actual = value(url);
@@ -56,7 +57,19 @@ export default class DefaultPage {
 			throw new Error(message);
 		}
 	}
+	waitForLoad() {
+		// while(!(browser.isEnabled('html') && browser.isEnabled('body') && browser.isEnabled('head')) ) {}
+		while (true) {
+			let source = browser.getSource();
+			// console.log(`start\n${source}end\n`);
 
+			console.log("step");
+			if (source.includes('</body>')) {
+				console.log("breaked");
+				break;
+			}
+		}
+	}
 	hasClass(selector, name) {
 		let attribute;
 
