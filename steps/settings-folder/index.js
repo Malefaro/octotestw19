@@ -8,8 +8,12 @@ class SettingsFolderStep extends DefaultSteps{
         super(settingsPage);
     }
 
-    createFolder(name, location, isWebOnly, isArchive, passwordObj) {
-        this.page.createFolder({name, location, isWebOnly, isArchive, passwordObj})
+    checkFolder({name, location, isWebOnly, isArchive, passwordObj}) {
+        return this.page.checkFolder({name, location, isWebOnly, isArchive, passwordObj})
+    }
+
+    createFolder({name, location, isWebOnly, isArchive, passwordObj}) {
+        this.page.createFolder({name, location, isWebOnly, isArchive, passwordObj});
     }
 
     removeFolder(name) {

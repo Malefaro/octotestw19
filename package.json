@@ -21,6 +21,7 @@
     "wdio-spec-reporter": "0.1.5"
   },
   "dependencies": {
+    "chai": "^4.2.0",
     "chromedriver": "2.43.1",
     "selenium-standalone": "6.15.3",
     "selenium-webdriver": "^4.0.0-alpha.1"

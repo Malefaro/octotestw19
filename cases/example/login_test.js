@@ -5,7 +5,7 @@ import mainPage from '../../pages/main'
 import layout from '../../steps/layout'
 import folders from '../../steps/sidebar/folders';
 import letters from '../../steps/letters';
-
+import {assert, expect, should} from 'chai';
 // const webdriver = require('selenium-webdriver');
 // const chrome = require('selenium-webdriver/chrome');
 // const firefox = require('selenium-webdriver/firefox');
@@ -37,7 +37,13 @@ describe("test creating", () => {
     });
     it('create simple folder', () => {
         // let passobj = PasswordObj("testpass", "testquestion", "testans", this.password);
-        folder.createFolder("testFolder")
+        folder.createFolder({name: folderName});
+        assert.equal(folder.page.checkFolder({name: folderName}), true, 'folder does not exists');
+    });
+    it('create folder with OnlyWeb', () => {
+        folder.createFolder({name: folderName, isWebOnly: true});
+        assert.equal(folder.page.checkFolder({name: folderName, isWebOnly: true}), true, 'folder does not exists or not isWebOnly');
+
     });
     afterEach(() => {
         folder.removeFolder(folderName);
