@@ -5,8 +5,8 @@ function BuildPopUp(container) {
         folderName: addFolderPopupContainer + ' input[name="name"]',
         location: {
             container: addFolderPopupContainer + ' div.b-select__dropdown',
-            itemByText: (text) => addFolderPopupContainer +
-                ` div.b-select__dropdown a.[data-name="item"][data-text="${text}"]`,
+            itemByText: (text) => { return addFolderPopupContainer +
+                ` div.b-select__dropdown a[data-name="item"][data-text="${text}"]`},
             first: addFolderPopupContainer + ` div.b-select__dropdown a.[data-name="item"][data-num="0"]`
         },
         isOnlyWebCheckbox: addFolderPopupContainer + ' input[type="checkbox"][name="only_web"]',

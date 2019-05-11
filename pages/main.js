@@ -6,7 +6,7 @@ class MainPage extends DefaultPage {
 	}
 
 	get locators() {
-		const container = '#mailbox-container';
+		const container = '.mailbox__body';
 		return {
 			container,
 			logout: '[id="PH_logoutLink"]',

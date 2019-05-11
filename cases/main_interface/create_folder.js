@@ -18,7 +18,7 @@ describe("creating folder", () => {
     });
     it('create simple folder', () => {
         folder.openFolderMenu();
-        folder.createFolder("testFolder" + Math.round());
+        folder.createFolder("testFolder" + Math.random());
     });
     afterEach(() => {
         //folder.removeFolder(folderName);
